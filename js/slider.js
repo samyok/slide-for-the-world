@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let testSlider = new Slider(10, "#app");
+    let testSlider = new Slider(5, "#app", "/img/flowers.jpg");
 });
 var $logger = beaver.Logger({
 
@@ -21,9 +21,10 @@ class Slider {
      * Create a new Slider - by move, we are talking about moving the BLANK space
      * @param size The size of the board (size x size)
      * @param parent The CSS element selector of the parent
+     * @param imageURL The background image url
      * @returns {Slider}
      */
-    constructor(size, parent) {
+    constructor(size, parent, imageURL) {
         if ($(parent).length === 0) console.warn("Parent doesn't exist");
         /**
          * The size of the board
@@ -55,6 +56,7 @@ class Slider {
          * @type {Array}
          */
         this.board = tempboard;
+        this.imageURL = imageURL;
         this.element = $("<div/>").addClass("slider").appendTo(parent);
         this.html();
         return this;
@@ -64,12 +66,16 @@ class Slider {
         this.element.html("");
         let element = this.element; // do this because the .appendTo(this.element) would refer to the wrong 'this'
         let currentBoard = this;
+        let imageURL = this.imageURL;
+        let size = this.size;
         this.board.forEach((row, x) => {
-            let rowelem = $("<div/>").addClass("row").appendTo(element);
             row.forEach((item, y) => {
-                let tile = $("<div/>").addClass("tile");
-                if (item === 0) tile.addClass("blank").text("").appendTo(rowelem);
-                else tile.text(item).appendTo(rowelem);
+                let tile = $("<div/>").addClass("tile")
+                    .css("background-image", `url(${imageURL})`)
+                    .css("background-size", `${size * 50 }px ${ size * 50 }px`)
+                    .css("background-position", `${((item - 1)% size) * 51 }px ${ Math.floor((item -1 ) / size) * 51 }px`);
+                if (item === 0) tile.addClass("blank").text("").appendTo(element).css("background-image", "");
+                else tile.text(item).appendTo(element);
                 if (currentBoard.blank.x === x && currentBoard.blank.y !== y) {
                     tile.addClass("clickable");
                     tile.click(function () {
