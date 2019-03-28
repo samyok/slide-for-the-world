@@ -5,9 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login to SlideForTheWorld!</title>
     <script src="/dist/normalize.bundle.js"></script>
-    <script src="/dist/login.bundle.js"></script>
+    <script src="/dist/play.bundle.js"></script>
 </head>
 <body>
-<div id="auth-container"></div>
+<div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="center-align">
+            <div class="commandbar">
+                <div id="prcnt" class="prcnt">0</div>
+                <button class="btn waves-effect red" onclick="location.reload()">Restart</button>
+                <div id="clicks" class="clicks">0</div>
+            </div>
+            <div id="main" class="center-align">
+
+            </div>
+            <button class="btn-flat waves-effect white-text" onclick="$('#otherPeople').toggle()">Toggle Others</button>
+        </div>
+        <div id="otherPeople">
+        </div>
+    </div>
+</div>
+<!-- Modal Structure -->
+<div id="winModal" class="modal black-text">
+    <div class="modal-content">
+        <h4>You won!!</h4>
+        <p>Congrats! Here's how everyone else did: </p>
+        <ul id="winnerList"></ul>
+    </div>
+    <div class="modal-footer">
+        <a href="/world.html" class="modal-close waves-effect waves-green btn-flat">Join Another Game</a>
+        <a href="/game.html" class="modal-close waves-effect waves-green btn-flat">Create Another Game</a>
+    </div>
+</div>
+<div id="loseModal" class="modal black-text">
+    <div class="modal-content">
+        <h4>You lost :(</h4>
+        <p>Here's how everyone else did: </p>
+        <ul id="loserList"></ul>
+    </div>
+    <div class="modal-footer">
+        <a href="/world.html" class="modal-close waves-effect waves-green btn-flat">Join Another Game</a>
+        <a href="/game.html" class="modal-close waves-effect waves-green btn-flat">Create Another Game</a>
+    </div>
+</div>
+
 </body>
 </html>
