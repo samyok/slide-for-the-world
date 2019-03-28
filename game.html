@@ -2,9 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SlideForTheWorld!</title>
+    <script src="/dist/normalize.bundle.js"></script>
+    <script src="/dist/game.bundle.js"></script>
 </head>
 <body>
-$END$
+<div id="game-selection" class="center-align">
+    <a class="waves-effect waves-light btn modal-trigger red" href="#gameConfig">Create Game</a>
+    <a class="waves-effect waves-light btn modal-trigger blue-grey" href="#uploadModal">Change Picture</a>
+
+</div>
+<div id="gameConfig" class="modal black-text">
+    <div class="modal-content">
+        <h4>New Game</h4>
+        <p>Please enter the difficulty of the game</p>
+        <form>
+            <div class="input-field">
+                <input id="side_length" type="number" min="2" class="validate">
+                <label for="side_length">Side Length</label>
+                <span class="helper-text" data-error="Please enter a number that is at least 4" data-success=""></span>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button id="createGameButton" class="waves-effect waves-green btn-flat">Create Game</button>
+    </div>
+</div>
+<div id="gameCreating" class="modal black-text">
+    <div class="modal-content">
+        <h4 id="gameID">Creating Game...</h4>
+        <h5>Link: <a href="http://slidefortheworld.co">slidefortheworld.co</a></h5>
+        <p>Tell your friends to join using the code above! Press Start when you want to start the game!</p>
+        <h6>People playing:</h6>
+        <ul id="peoplePlaying"></ul>
+    </div>
+    <div class="modal-footer">
+        <button id="startGameButton" disabled class="waves-effect green white-text btn-flat">Start Game</button>
+    </div>
+</div>
+<div id="uploadModal" class="modal black-text">
+    <div class="modal-content">
+        <h4>New Picture</h4>
+        <p>Please enter the new picture background</p>
+        <div id="uploadForm" class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Browse</span>
+                            <input type="file" id="image" accept="image/png, image/jpeg"/>
+                        </div>
+
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text"
+                                   placeholder="Upload file"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="loaderPicture" class="hide row">
+            <h5 id="uploadProgressText" class="center-align">Uploading...</h5>
+            <div class="progress">
+                <div id="actualPictureLoader" class="determinate" style="width: 0"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="uploadFileButton" class="waves-effect waves-green btn-flat">Upload Picture</button>
+    </div>
+</div>
+<div class="row">
+    <div class="center-align col s12">
+        <img id="userImage" class="hide" src="" alt="User Picked Image" style="width: 250px; height: 250px; margin-top: 20px;"/>
+    </div>
+</div>
 </body>
 </html>
