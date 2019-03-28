@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login to SlideForTheWorld!</title>
+    <title>Join a SlideForTheWorld!</title>
     <script src="/dist/normalize.bundle.js"></script>
-    <script src="/dist/join.bundle.js"></script>
+    <script src="/dist/joiner.bundle.js"></script>
 </head>
 <body>
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <div class="card">
-            <div class="row">
+            <div class="card-content row center-align black-text">
+                <span class="card-title">Join a game!</span>
+                <p>Type in the code below to join another person's game.</p>
                 <div class="input-field col s12">
                     <input id="code" type="number" min="100000" max="999999" class="validate">
-                    <label for="code">Disabled</label>
+                    <label for="code">Code</label>
                 </div>
+                <button class="waves-effect btn" id="joinbtn" disabled>Join</button>
             </div>
+
         </div>
     </div>
 </div>
