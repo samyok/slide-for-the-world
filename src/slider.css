@@ -1,10 +1,8 @@
 .slider {
-    outline: 2px solid brown;
+    outline: 2px solid black;
     padding: 5px;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
     grid-gap: 1px;
-    width: calc(52 * 5px);
 }
 
 .row {
@@ -32,7 +30,13 @@
     cursor: default;
     margin: 1px 1px 0 0;
     order: 1;
-    transition-duration: 5s
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 /*.tile:hover {*/

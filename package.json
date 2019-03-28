@@ -1,0 +1,36 @@
+{
+  "name": "slide-for-the-world",
+  "version": "1.0.0",
+  "description": "This is the frontend for slideforthe.world; it is based on the https://html5boilerplate.com boilerplate.",
+  "private": true,
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nepaltechguy2/slide-for-the-world.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nepaltechguy2/slide-for-the-world/issues"
+  },
+  "homepage": "https://github.com/Nepaltechguy2/slide-for-the-world#readme",
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "firebase": "^5.9.1",
+    "firebaseui": "^3.5.2",
+    "google-fonts-webpack-plugin": "^0.4.4",
+    "jquery": "^3.3.1",
+    "materialize-css": "^1.0.0",
+    "style-loader": "^0.23.1"
+  }
+}
